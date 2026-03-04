@@ -1,0 +1,13 @@
+# Generated artifacts
+*.tmp
+*.swp
+
+# Env
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
