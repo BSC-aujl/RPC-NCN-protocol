@@ -1,6 +1,6 @@
 # RPC-NCN Architecture
 
-> **Status:** Design Complete  
+> **Status:** Informative architecture context (non-normative)
 > **Last Updated:** December 2025
 
 ## System Overview
@@ -127,4 +127,4 @@ Attestations aggregated → P50/P95/P99 committed on-chain per epoch.
 
 ---
 
-See [Implementation Spec](../specs/ncn-implementation-spec.md) for detailed entity definitions and flowcharts.
+See [Implementation Spec](../../specs/core/ncn-implementation-spec.md) for detailed entity definitions and flowcharts.

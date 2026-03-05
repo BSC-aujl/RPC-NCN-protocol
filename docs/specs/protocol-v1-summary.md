@@ -1,5 +1,7 @@
 # Protocol v1 Summary (Public)
 
+**Page status:** Informative summary only. Normative behavior is defined in `specs/core/poc-protocol-v1-draft.md`.
+
 This page is a concise public summary of RPC-NCN Protocol v1.
 
 ## Core objective

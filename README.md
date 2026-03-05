@@ -20,6 +20,8 @@ Do not place new protocol requirements in informative docs.
 | Contribution workflow | `docs/CONTRIBUTING.md` |
 | Publication safety + release gates | `PUBLICATION_POLICY.md` |
 | Migration backlog | `docs/MIGRATION_CHECKLIST.md` |
+| POC protocol v1 draft (normative) | `specs/core/poc-protocol-v1-draft.md` |
+| Legacy alias for old POC path | `specs/wire-format/poc-protocol-v1.md` |
 | Change proposals before ratification | `rfcs/` |
 
 ## Repository Structure (Protocol Assets)

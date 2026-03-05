@@ -5,9 +5,10 @@ Public entry point for protocol documentation and governance process.
 **Page status:** Informative navigation only.
 
 ## Canonical protocol sources
-- Core implementation-oriented spec: [specs/core/ncn-implementation-spec.md](../specs/core/ncn-implementation-spec.md)
-- Wire-format draft: [specs/wire-format/poc-protocol-v1.md](../specs/wire-format/poc-protocol-v1.md)
+- POC protocol draft (canonical): [specs/core/poc-protocol-v1-draft.md](../specs/core/poc-protocol-v1-draft.md)
+- Core implementation-oriented design context: [specs/core/ncn-implementation-spec.md](../specs/core/ncn-implementation-spec.md)
 - Public redacted summary: [docs/specs/protocol-v1-summary.md](./specs/protocol-v1-summary.md)
+- Legacy compatibility alias: [specs/wire-format/poc-protocol-v1.md](../specs/wire-format/poc-protocol-v1.md)
 
 ## Governance and process
 - Contribution workflow: [docs/CONTRIBUTING.md](./CONTRIBUTING.md)

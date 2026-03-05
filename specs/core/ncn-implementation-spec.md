@@ -4,7 +4,7 @@
 > **Version:** 1.1
 > **Last Updated:** January 2026
 
-> ⚠️ **Important:** For the current POC implementation, refer to [**poc-protocol-v1.md**](./poc-protocol-v1.md).
+> ⚠️ **Important:** For the current POC implementation, refer to [**poc-protocol-v1-draft.md**](./poc-protocol-v1-draft.md).
 > This document provides background context and future considerations.
 > The POC protocol supersedes the detailed designs in this document.
 
@@ -29,7 +29,7 @@ This document provides detailed entity descriptions, flowcharts, derived require
 
 ### Current Implementation: POC Protocol v1
 
-The POC focuses on **integrity verification via stake-weighted consensus**. See [poc-protocol-v1.md](./poc-protocol-v1.md) for the complete specification.
+The POC focuses on **integrity verification via stake-weighted consensus**. See [poc-protocol-v1-draft.md](./poc-protocol-v1-draft.md) for the complete specification.
 
 | Component | POC Implementation | Future (v2) |
 |-----------|-------------------|-------------|
@@ -282,7 +282,7 @@ pub enum VerificationLevel {
 
 #### 4. Operator
 
-> **POC Implementation:** See [poc-protocol-v1.md](./poc-protocol-v1.md#operator-account-updated) for the simplified POC account structure.
+> **POC Implementation:** See [poc-protocol-v1-draft.md](./poc-protocol-v1-draft.md#operator-account-updated) for the simplified POC account structure.
 
 ```rust
 /// RPC infrastructure provider participating in the NCN (POC version)
@@ -1055,7 +1055,7 @@ When Jito slashing becomes available, the POC offense model can be extended:
 
 ### POC Scope
 
-> **Current Scope:** See [poc-protocol-v1.md](./poc-protocol-v1.md) for the complete POC specification.
+> **Current Scope:** See [poc-protocol-v1-draft.md](./poc-protocol-v1-draft.md) for the complete POC specification.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
@@ -1117,7 +1117,7 @@ When Jito slashing becomes available, the POC offense model can be extended:
 
 ### POC Milestones (Protocol v1)
 
-> **Reference:** See [poc-protocol-v1.md](./poc-protocol-v1.md#implementation-order) for detailed tasks.
+> **Reference:** See [poc-protocol-v1-draft.md](./poc-protocol-v1-draft.md#implementation-order) for detailed tasks.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
@@ -1286,7 +1286,7 @@ When Jito slashing becomes available, the POC offense model can be extended:
 
 ### On-Chain Account Structures (POC Protocol v1)
 
-> **Reference:** See [poc-protocol-v1.md](./poc-protocol-v1.md#on-chain-state) for the authoritative account definitions.
+> **Reference:** See [poc-protocol-v1-draft.md](./poc-protocol-v1-draft.md#on-chain-state) for the authoritative account definitions.
 
 ```rust
 // programs/rpc-ncn/src/state.rs (POC)
@@ -1379,13 +1379,8 @@ The following structures from the original design are deferred:
 
 ## See Also
 
-- [**POC Protocol v1**](./poc-protocol-v1.md) — **Current implementation specification**
-- [Stake-Weighted Consensus](../docs/research/stake-weighted-consensus.md) — Consensus research
-- [Penalty Model](../docs/research/penalty-diminishing-returns.md) — Offense-based penalties
-- [On-Chain Tracking](../docs/research/on-chain-consensus-tracking.md) — Interval attestations
-- [Performance Metrics](../docs/research/on-chain-performance-metrics.md) — Simplified tracking
-- [Market Analysis](../docs/research/market-analysis.md) — Quantitative market data
-- [Business Models](../docs/research/business-models.md) — Revenue models
-- [Architecture](../docs/ARCHITECTURE.md) — High-level design
-- [NCN Frameworks](../docs/research/ncn-frameworks.md) — Jito research
-- [Open Questions](../docs/OPEN_QUESTIONS.md) — Tracked unknowns
+- [**POC Protocol v1 Draft**](./poc-protocol-v1-draft.md) — current protocol behavior draft
+- [Public redacted implementation summary](./ncn-implementation-spec-public-redacted.md) — publication-safe high-level model
+- [Protocol v1 summary](../../docs/specs/protocol-v1-summary.md) — concise public overview
+- [System architecture context](../../docs/specs/system-architecture-context.md) — informative architecture framing
+- [Open migration questions](../../governance/open-questions-from-source.md) — unresolved source migration decisions

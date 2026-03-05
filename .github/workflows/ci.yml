@@ -2,131 +2,99 @@ name: CI
 
 on:
   push:
-    branches: [main, poc_implementation]
+    branches: [main]
   pull_request:
     branches: [main]
 
-env:
-  CARGO_TERM_COLOR: always
-  RUST_BACKTRACE: 1
-
 jobs:
-  gateway-tests:
-    name: Gateway Tests
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: poc/gateway
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: poc/gateway/package-lock.json
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run tests
-        run: npm test
-
-  operator-node-tests:
-    name: Operator Node Tests
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: poc/operator-node
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: Cache cargo
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.cargo/bin/
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            poc/operator-node/target/
-          key: ${{ runner.os }}-cargo-${{ hashFiles('poc/operator-node/Cargo.lock') }}
-
-      - name: Run tests
-        run: cargo test --all-features
-
-  client-sdk-tests:
-    name: Client SDK Tests
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: poc/client-sdk
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: poc/client-sdk/package-lock.json
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run tests
-        run: npm test
-
-  contracts-tests:
-    name: On-Chain Protocol Tests
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: poc/contracts
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run protocol tests
-        run: npx ts-mocha tests/poc-protocol-v1.ts --timeout 10000
-
-  lint:
-    name: Lint
+  docs-sanity:
+    name: Docs sanity checks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          components: clippy, rustfmt
+      - name: Check whitespace / patch safety
+        run: git diff --check
 
-      - name: Cache cargo
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.cargo/bin/
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            poc/operator-node/target/
-          key: ${{ runner.os }}-cargo-lint-${{ hashFiles('poc/operator-node/Cargo.lock') }}
+      - name: Markdown local link sanity
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
 
-      - name: Check formatting
-        working-directory: poc/operator-node
-        run: cargo fmt --check
+          function walk(dir, acc = []) {
+            for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+              if (entry.name === '.git') continue;
+              const p = path.join(dir, entry.name);
+              if (entry.isDirectory()) walk(p, acc);
+              else if (entry.isFile() && p.endsWith('.md')) acc.push(path.normalize(p));
+            }
+            return acc;
+          }
 
-      - name: Run clippy
-        working-directory: poc/operator-node
-        run: cargo clippy --all-features -- -W clippy::all
+          function slug(text) {
+            return text
+              .toLowerCase()
+              .trim()
+              .replace(/[\u2018\u2019']/g, '')
+              .replace(/[^\w\s-]/g, '')
+              .replace(/\s+/g, '-')
+              .replace(/-+/g, '-');
+          }
+
+          const files = walk('.');
+          const headingIndex = new Map();
+
+          for (const file of files) {
+            const set = new Set();
+            const lines = fs.readFileSync(file, 'utf8').split(/\r?\n/);
+            for (const line of lines) {
+              const m = line.match(/^(#{1,6})\s+(.*)$/);
+              if (m) set.add(slug(m[2]));
+            }
+            headingIndex.set(file, set);
+          }
+
+          const linkRe = /\[[^\]]+\]\(([^)]+)\)/g;
+          const broken = [];
+
+          for (const file of files) {
+            const text = fs.readFileSync(file, 'utf8');
+            let match;
+            while ((match = linkRe.exec(text))) {
+              let href = match[1].trim();
+              if (!href || /^(https?:|mailto:|data:)/.test(href)) continue;
+
+              let targetFile = file;
+              let anchor = '';
+
+              if (href.startsWith('#')) {
+                anchor = href.slice(1);
+              } else {
+                const [target, maybeAnchor] = href.split('#');
+                targetFile = path.normalize(path.join(path.dirname(file), target));
+                anchor = maybeAnchor || '';
+
+                if (!fs.existsSync(targetFile)) {
+                  broken.push(`${file}: missing file for link ${href}`);
+                  continue;
+                }
+              }
+
+              if (anchor) {
+                const headings = headingIndex.get(targetFile);
+                if (!headings || !headings.has(slug(anchor))) {
+                  broken.push(`${file}: missing anchor for link ${href}`);
+                }
+              }
+            }
+          }
+
+          if (broken.length) {
+            console.error('Markdown link sanity failed:');
+            for (const b of broken) console.error(`- ${b}`);
+            process.exit(1);
+          }
+
+          console.log('Markdown link sanity passed.');
+          NODE
