@@ -1,0 +1,132 @@
+name: CI
+
+on:
+  push:
+    branches: [main, poc_implementation]
+  pull_request:
+    branches: [main]
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: 1
+
+jobs:
+  gateway-tests:
+    name: Gateway Tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: poc/gateway
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: poc/gateway/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+  operator-node-tests:
+    name: Operator Node Tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: poc/operator-node
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            poc/operator-node/target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('poc/operator-node/Cargo.lock') }}
+
+      - name: Run tests
+        run: cargo test --all-features
+
+  client-sdk-tests:
+    name: Client SDK Tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: poc/client-sdk
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: poc/client-sdk/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+  contracts-tests:
+    name: On-Chain Protocol Tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: poc/contracts
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run protocol tests
+        run: npx ts-mocha tests/poc-protocol-v1.ts --timeout 10000
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            poc/operator-node/target/
+          key: ${{ runner.os }}-cargo-lint-${{ hashFiles('poc/operator-node/Cargo.lock') }}
+
+      - name: Check formatting
+        working-directory: poc/operator-node
+        run: cargo fmt --check
+
+      - name: Run clippy
+        working-directory: poc/operator-node
+        run: cargo clippy --all-features -- -W clippy::all
