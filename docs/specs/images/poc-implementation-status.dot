@@ -1,0 +1,188 @@
+digraph RPC_NCN_Implementation_Status {
+    // Graph settings
+    rankdir=TB;
+    compound=true;
+    node [shape=box, style="rounded,filled", fontname="Arial", fontsize=11];
+    edge [fontname="Arial", fontsize=9];
+    splines=ortho;
+
+    // Title
+    labelloc="t";
+    label="RPC-NCN Implementation Status (v0.2.0)\nSolana Testnet Deployment";
+    fontsize=16;
+    fontname="Arial Bold";
+
+    // Legend
+    subgraph cluster_legend {
+        label="Legend";
+        style=filled;
+        color=white;
+        fontsize=12;
+        
+        LegendComplete [label="✅ Complete", fillcolor="#90EE90", shape=box];
+        LegendPartial [label="🔄 In Progress", fillcolor="#FFE4B5", shape=box];
+        LegendPending [label="⏳ Pending", fillcolor="#D3D3D3", shape=box];
+        
+        LegendComplete -> LegendPartial [style=invis];
+        LegendPartial -> LegendPending [style=invis];
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // CLIENT LAYER - COMPLETE
+    // ═══════════════════════════════════════════════════════════════
+    subgraph cluster_client {
+        label="Client Layer";
+        style=filled;
+        color="#E6F3FF";
+        fontsize=12;
+
+        Client [label="Client Application\n(TypeScript SDK)\n✅ COMPLETE", fillcolor="#90EE90"];
+        ApiKey [label="API Key\n(Subscription)\n✅ COMPLETE", shape=note, fillcolor="#90EE90"];
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // GATEWAY LAYER - MOSTLY COMPLETE
+    // ═══════════════════════════════════════════════════════════════
+    subgraph cluster_gateway {
+        label="Gateway Layer";
+        style=filled;
+        color="#E8F5E9";
+        fontsize=12;
+
+        Gateway [label="Gateway\n(TypeScript/Node.js)\n✅ COMPLETE", shape=component, fillcolor="#90EE90"];
+        Router [label="Request Router\n✅ COMPLETE", fillcolor="#90EE90"];
+        Aggregator [label="Response Aggregator\n✅ COMPLETE", fillcolor="#90EE90"];
+        VerificationEngine [label="Signature Verifier\n(Threshold Check)\n✅ COMPLETE", fillcolor="#90EE90"];
+        MetricsCollector [label="Metrics Tracker\n✅ COMPLETE", fillcolor="#90EE90"];
+        OnChainSync [label="On-Chain Sync\n✅ COMPLETE", fillcolor="#90EE90"];
+
+        Gateway -> Router;
+        Router -> Aggregator;
+        Aggregator -> VerificationEngine;
+        VerificationEngine -> MetricsCollector;
+        Gateway -> OnChainSync [style=dashed];
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // OPERATOR LAYER - MOSTLY COMPLETE
+    // ═══════════════════════════════════════════════════════════════
+    subgraph cluster_operators {
+        label="Operator Layer";
+        style=filled;
+        color="#FFF8E1";
+        fontsize=12;
+
+        Operator1 [label="Operator 1\n(Rust RPC Proxy)\n✅ COMPLETE", shape=box3d, fillcolor="#90EE90"];
+        Operator2 [label="Operator 2\n(Rust RPC Proxy)\n✅ COMPLETE", shape=box3d, fillcolor="#90EE90"];
+        Operator3 [label="Operator N\n(Rust RPC Proxy)\n✅ COMPLETE", shape=box3d, fillcolor="#90EE90"];
+
+        OperatorFunctions [label="Operator Functions:\n✅ Serve RPC requests\n✅ Sign responses (ED25519)\n✅ Persistent keypairs\n🔄 Measure peer latency\n⏳ Stake collateral (on-chain)", shape=note, fillcolor="#FFE4B5"];
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // LATENCY ATTESTATION - IN PROGRESS
+    // ═══════════════════════════════════════════════════════════════
+    subgraph cluster_latency {
+        label="Latency Attestation Network";
+        style=dashed;
+        color="#FFA500";
+        fontsize=12;
+
+        LatencyAttestation [label="Peer-to-Peer\nLatency Measurement\n🔄 IN PROGRESS", shape=diamond, fillcolor="#FFE4B5"];
+        ChallengeResponse [label="Challenge-Response Protocol:\n✅ 1. Send challenge(nonce)\n✅ 2. Receive signed response\n✅ 3. Calculate RTT\n⏳ 4. Submit on-chain", shape=note, fillcolor="#FFE4B5"];
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // SOLANA SETTLEMENT LAYER - PARTIAL
+    // ═══════════════════════════════════════════════════════════════
+    subgraph cluster_solana {
+        label="Solana Settlement Layer\n(Program: DztacWhGG8zA8...T4)";
+        style=filled;
+        color="#FCE4EC";
+        fontsize=12;
+
+        SolanaRPC [label="Solana Testnet\nRPC Nodes\n✅ CONNECTED", shape=cylinder, fillcolor="#90EE90"];
+
+        subgraph cluster_programs {
+            label="On-Chain Programs (Anchor)";
+            style=filled;
+            color="#FFEBEE";
+            fontsize=11;
+
+            NcnConfig [label="NCN Config\n(Fee Splits, Params)\n✅ DEPLOYED", shape=folder, fillcolor="#90EE90"];
+            Registry [label="Operator Registry\n(Keys, Stake)\n✅ DEPLOYED", shape=folder, fillcolor="#90EE90"];
+            StakeCustody [label="Stake Custody\n(Operator Collateral)\n✅ DEPLOYED", shape=folder, fillcolor="#90EE90"];
+            Subscriptions [label="Subscriptions\n(Tiers, Limits)\n🔄 PARTIAL", shape=folder, fillcolor="#FFE4B5"];
+            Attestations [label="Attestation Storage\n⏳ DEFINED", shape=folder, fillcolor="#D3D3D3"];
+            SlashingEngine [label="Slashing Engine\n⏳ DEFINED", shape=folder, fillcolor="#D3D3D3"];
+            RewardsDistribution [label="Rewards Distribution\n⏳ DEFINED", shape=folder, fillcolor="#D3D3D3"];
+        }
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // JITO INTEGRATION - FUTURE
+    // ═══════════════════════════════════════════════════════════════
+    subgraph cluster_jito {
+        label="Jito Restaking (Future)";
+        style=dashed;
+        color="#9E9E9E";
+        fontsize=12;
+
+        JitoVault [label="Jito Vault\n⏳ FUTURE", shape=cylinder, fillcolor="#D3D3D3"];
+        JitoOperators [label="Jito Operator Set\n⏳ FUTURE", shape=folder, fillcolor="#D3D3D3"];
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // STATUS NOTES
+    // ═══════════════════════════════════════════════════════════════
+    
+    VerificationTiers [label="Verification Tiers:\n━━━━━━━━━━━━━━━━━━━\n✅ Basic: 1 op, signature\n✅ Standard: 3-5 ops, multi-sig\n⏳ Premium: 5+ ops, Merkle proof\n⏳ Enterprise: 7+ ops, insurance", shape=note, fillcolor="#E1BEE7"];
+
+    TestStatus [label="Test Coverage:\n━━━━━━━━━━━━━━━━━━━\n✅ Operator: 16 tests\n✅ Gateway: 28 tests\n✅ Client SDK: 9 tests\n🔄 Contracts: Build only", shape=note, fillcolor="#B3E5FC"];
+
+    // ═══════════════════════════════════════════════════════════════
+    // MAIN DATA FLOW (showing working paths in green)
+    // ═══════════════════════════════════════════════════════════════
+    
+    Client -> Gateway [label="1. Request\n+ API Key", color="#2E7D32", penwidth=2];
+    Gateway -> Router [label="2. Lookup\nSubscription", color="#2E7D32"];
+    Router -> Operator1 [label="3. Fanout", color="#2E7D32", penwidth=2];
+    Router -> Operator2 [label="3. Fanout", color="#2E7D32"];
+    Router -> Operator3 [label="3. Fanout", color="#2E7D32"];
+
+    Operator1 -> SolanaRPC [label="4. Query", color="#2E7D32"];
+    Operator2 -> SolanaRPC [label="4. Query", color="#2E7D32"];
+    Operator3 -> SolanaRPC [label="4. Query", color="#2E7D32"];
+
+    Operator1 -> Aggregator [label="5. Signed", color="#C62828"];
+    Operator2 -> Aggregator [label="5. Signed", color="#C62828"];
+    Operator3 -> Aggregator [label="5. Signed", color="#C62828"];
+
+    Aggregator -> Client [label="6. Verified\nResponse", color="#6A1B9A", penwidth=2];
+
+    // Gateway-Solana interactions (working)
+    OnChainSync -> Registry [label="Sync operators", color="#2E7D32", style=dashed];
+    OnChainSync -> NcnConfig [style=dashed, color="#2E7D32"];
+
+    // Operator-On-Chain (partial)
+    Operator1 -> StakeCustody [label="Stake", style=dotted, color="#FF9800"];
+
+    // Pending flows (gray dotted)
+    LatencyAttestation -> Attestations [label="Submit proof", style=dotted, color="#9E9E9E"];
+    SlashingEngine -> Operator1 [label="Slash", style=dotted, color="#9E9E9E"];
+    RewardsDistribution -> Operator1 [label="Distribute", style=dotted, color="#9E9E9E"];
+    MetricsCollector -> RewardsDistribution [label="Report", style=dotted, color="#9E9E9E"];
+
+    // Latency attestation (partial)
+    Operator1 -> LatencyAttestation [style=dashed, color="#FF9800"];
+    Operator2 -> LatencyAttestation [style=dashed, color="#FF9800"];
+    Operator3 -> LatencyAttestation [style=dashed, color="#FF9800"];
+
+    // Future Jito integration
+    StakeCustody -> JitoVault [label="Future\nmigration", style=dotted, color="#9E9E9E"];
+
+    // Layout hints
+    {rank=same; VerificationTiers; TestStatus;}
+    {rank=same; LegendComplete; LegendPartial; LegendPending;}
+}
+
