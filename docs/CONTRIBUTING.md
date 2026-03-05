@@ -1,33 +1,47 @@
-# Contributing (Public Protocol Repo)
+# Contributing
 
-Thanks for helping improve the RPC-NCN protocol specs.
+How to propose changes to this public protocol repository.
 
-## Scope
-Contributions here should be protocol-level and public-safe:
-- Normative spec text
+**Protocol status of this page:** Informative/process guidance.
+
+## Scope for contributions
+
+Allowed:
+- Protocol specification text
 - RFC proposals
-- Schemas and conformance vectors
-- Versioning and governance docs
+- Schemas and conformance assets
+- Versioning/governance process documents
 
-Do **not** submit:
-- Implementation runtime code
-- Secrets, credentials, internal endpoints, or operational runbooks
+Out of scope:
+- Runtime/service implementation code
+- Internal operational runbooks
+- Sensitive or non-public material (see [Publication Policy](../PUBLICATION_POLICY.md))
 
-## Before opening a PR
-1. Check whether the change is normative or informative.
-2. If protocol behavior changes, open/update an RFC in `rfcs/`.
-3. Document compatibility impact (non-breaking vs breaking).
-4. Update tests/vectors/schemas when behavior changes.
+## Required flow
 
-## Pull request expectations
+1. Classify your change:
+   - **Normative protocol behavior change**, or
+   - **Informative/editorial/process only**
+2. If behavior changes, create/update an RFC in `rfcs/`.
+3. Add explicit compatibility impact (backward/forward/breaking).
+4. Update linked artifacts when applicable:
+   - `schemas/`
+   - `reference-test-vectors/`
+   - `compliance-tests/`
+5. Keep wording precise and unambiguous in normative text.
+
+## PR expectations
+
 - Keep PRs focused and reviewable.
-- Use precise, unambiguous wording in normative sections.
 - Link related issues/RFCs.
-- Include a short migration note when relevant.
+- Include migration notes for implementers when relevant.
+- Confirm content is publication-safe per [PUBLICATION_POLICY.md](../PUBLICATION_POLICY.md).
 
-## Review and ownership
-Maintainers under **Blocksize** review for protocol correctness, compatibility, and publication safety.
+## Review
 
-## Security and sensitive findings
-Do not publish exploit details or sensitive operational data in issues/PRs.
-If needed, request a private reporting path from maintainers first.
+Maintainers under **Blocksize** review protocol correctness, compatibility, and publication safety.
+
+## Security reporting
+
+Do not post exploit details or sensitive operational data in public issues/PRs.
+Request a private reporting path from maintainers when needed.
