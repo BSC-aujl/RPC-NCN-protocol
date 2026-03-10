@@ -1,0 +1,22 @@
+<div id="viz-modal" class="viz-modal" aria-hidden="true">
+  <div class="viz-modal-backdrop" data-viz-close></div>
+  <div class="viz-modal-panel" role="dialog" aria-modal="true" aria-label="Interactive visualization viewer">
+    <div class="viz-toolbar">
+      <strong id="viz-title">Visualization</strong>
+      <div class="viz-controls">
+        <button type="button" data-viz-action="zoom-in">+</button>
+        <button type="button" data-viz-action="zoom-out">−</button>
+        <button type="button" data-viz-action="left">←</button>
+        <button type="button" data-viz-action="right">→</button>
+        <button type="button" data-viz-action="up">↑</button>
+        <button type="button" data-viz-action="down">↓</button>
+        <button type="button" data-viz-action="reset">Reset</button>
+        <button type="button" data-viz-close>Close</button>
+      </div>
+    </div>
+    <div class="viz-canvas" id="viz-canvas">
+      <img id="viz-image" alt="Interactive visualization" draggable="false" />
+    </div>
+  </div>
+</div>
+<script src="{{ '/assets/viz-viewer.js' | relative_url }}"></script>

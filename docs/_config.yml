@@ -3,10 +3,4 @@ description: Verifiable high-assurance RPC protocol documentation
 markdown: kramdown
 theme: minima
 header_pages:
-  - index.md
   - poc-status.md
-  - visualizations.md
-exclude:
-  - CONTRIBUTING.md
-  - related-content.md
-  - security/THREAT_MODEL.md

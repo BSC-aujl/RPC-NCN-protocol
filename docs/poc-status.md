@@ -46,7 +46,23 @@ RPC-NCN v1 focuses on verifiable response integrity for high-assurance RPC workf
 - no production slashing integration yet (offense model in POC)
 - production readiness still depends on additional hardening, audit, and governance gates
 
+## Detailed visual views
+
+<div class="viz-grid">
+  <button class="viz-card" data-viz-src="./specs/images/component-diagrams.png" data-viz-title="POC component view">
+    <img src="./specs/images/component-diagrams.png" alt="RPC-NCN POC component diagram" />
+    <span>POC component view (click to zoom + pan)</span>
+  </button>
+
+  <button class="viz-card" data-viz-src="./specs/images/poc-implementation-status.png" data-viz-title="Implementation status view">
+    <img src="./specs/images/poc-implementation-status.png" alt="RPC-NCN implementation status" />
+    <span>Implementation status view (click to zoom + pan)</span>
+  </button>
+</div>
+
 ## More details
 
-- [Visualizations](./visualizations.md)
-- [Repository README](https://github.com/BSC-aujl/RPC-NCN-protocol#readme)
+- [Repository README (single-page reference)](https://github.com/BSC-aujl/RPC-NCN-protocol#readme)
+- [Visualizations page](./visualizations.html)
+
+{% include viz-modal.html %}
