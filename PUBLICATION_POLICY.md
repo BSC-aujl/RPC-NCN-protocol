@@ -22,9 +22,9 @@ This is the canonical policy for what may be published in this repository.
 
 ## Included source mappings (current)
 
-- `specs/poc-protocol-v1.md` → `specs/core/poc-protocol-v1-draft.md` (canonical)
-- Legacy compatibility alias retained at `specs/wire-format/poc-protocol-v1.md`
-- `specs/ncn-implementation-spec.md` → `specs/core/ncn-implementation-spec-public-redacted.md`
+- Canonical protocol draft: `specs/core/poc-protocol-v1-draft.md`
+- Legacy compatibility alias: `specs/wire-format/poc-protocol-v1.md` → canonical draft above
+- Legacy implementation pointer: `specs/core/ncn-implementation-spec.md` → `specs/core/ncn-implementation-spec-public-redacted.md`
 
 ## Release gates
 

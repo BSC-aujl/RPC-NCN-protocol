@@ -32,4 +32,4 @@ Before publishing docs updates:
 3. Keep normative vs informative boundaries explicit.
 4. Ensure wording is neutral, concise, and newcomer-readable.
 
-For full governance and gate details, maintainers use the repository root `PUBLICATION_POLICY.md` as the canonical internal checklist.
+For full governance and gate details, maintainers use the repository root `PUBLICATION_POLICY.md` as the canonical repository publication checklist.
