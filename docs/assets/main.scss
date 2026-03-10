@@ -1,0 +1,148 @@
+---
+---
+
+@import "minima";
+
+.ncn-hero {
+  padding: 1.15rem 1.2rem;
+  border: 1px solid #d4e4ff;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f3f8ff 0%, #ffffff 78%);
+  box-shadow: 0 6px 18px rgba(33, 73, 133, 0.08);
+  margin: 0.85rem 0 1rem;
+}
+
+.ncn-kicker {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2c5fb3;
+  font-weight: 700;
+}
+
+.ncn-lead {
+  margin: 0;
+  color: #2b3344;
+}
+
+.ncn-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.1rem 0 1.2rem;
+}
+
+.ncn-chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #dce5f3;
+  border-radius: 999px;
+  padding: 0.34rem 0.7rem;
+  font-size: 0.88rem;
+  color: #1e3f73;
+  text-decoration: none;
+  background: #fbfdff;
+}
+
+.ncn-chip:hover {
+  border-color: #b9cde8;
+  background: #f2f7ff;
+  text-decoration: none;
+}
+
+.ncn-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin: 0.8rem 0 1.2rem;
+}
+
+.ncn-stat-card {
+  border: 1px solid #e1e8f2;
+  border-radius: 12px;
+  padding: 0.8rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+  box-shadow: 0 3px 12px rgba(26, 52, 90, 0.05);
+}
+
+.ncn-stat-card span {
+  color: #3a4560;
+  font-size: 0.94rem;
+}
+
+.ncn-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.6rem;
+  margin: 0.6rem 0 1rem;
+}
+
+.ncn-flow > div {
+  border: 1px solid #e4eaf4;
+  border-radius: 11px;
+  background: #fff;
+  padding: 0.7rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.ncn-flow strong {
+  min-width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background: #2d62b7;
+  color: #fff;
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.05rem;
+}
+
+.ncn-flow span {
+  color: #37435d;
+  font-size: 0.92rem;
+}
+
+.ncn-split {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 0.9rem;
+  margin: 0.9rem 0;
+}
+
+.ncn-card {
+  border: 1px solid #e4e8ef;
+  border-radius: 12px;
+  padding: 0.9rem;
+  background: #fff;
+}
+
+.ncn-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+
+.ncn-visual-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ncn-visual-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #eef2f7;
+}
+
+@media (max-width: 800px) {
+  .ncn-split {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,6 +1,6 @@
-# Migration Checklist (from source monorepo)
+# Migration checklist
 
-Tracking remaining protocol artifacts to copy, sanitize, and publish from `RPC-NCN`.
+Tracking remaining protocol artifacts to copy, sanitize, and publish.
 
 ## Specs
 - [ ] Core protocol spec split into stable modules (`specs/core/*`)

@@ -15,7 +15,7 @@ Allowed:
 Out of scope:
 - Runtime/service implementation code
 - Internal operational runbooks
-- Sensitive or non-public material (see [Publication Policy](../PUBLICATION_POLICY.md))
+- Sensitive or non-public material (see [Publication Policy](./publication-policy.md))
 
 ## Required flow
 
@@ -35,7 +35,7 @@ Out of scope:
 - Keep PRs focused and reviewable.
 - Link related issues/RFCs.
 - Include migration notes for implementers when relevant.
-- Confirm content is publication-safe per [PUBLICATION_POLICY.md](../PUBLICATION_POLICY.md).
+- Confirm content is publication-safe per [Publication Policy](./publication-policy.md).
 
 ## Review
 
@@ -44,4 +44,4 @@ Maintainers under **Blocksize** review protocol correctness, compatibility, and 
 ## Security reporting
 
 Do not post exploit details or sensitive operational data in public issues/PRs.
-Request a private reporting path from maintainers when needed.
+Request a secure reporting path from maintainers when needed.

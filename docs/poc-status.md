@@ -3,9 +3,9 @@ layout: default
 title: POC Status
 ---
 
-# POC implementation status (public snapshot)
+# POC implementation status snapshot
 
-This page tracks the public status of the RPC-NCN proof-of-concept against protocol v1.
+This page tracks implementation progress of the RPC-NCN proof-of-concept against protocol v1.
 
 ## Current state
 
@@ -26,9 +26,9 @@ This page tracks the public status of the RPC-NCN proof-of-concept against proto
 
 ## Protocol alignment
 
-- Canonical protocol text: [`specs/core/poc-protocol-v1-draft.md`](../specs/core/poc-protocol-v1-draft.md)
-- Detailed implementation context: [`specs/core/ncn-implementation-spec.md`](../specs/core/ncn-implementation-spec.md)
-- Architecture context: [`docs/specs/system-architecture-context.md`](./specs/system-architecture-context.md)
+- Canonical protocol text: `specs/core/poc-protocol-v1-draft.md`
+- Public implementation model (redacted): `specs/core/ncn-implementation-spec-public-redacted.md`
+- Architecture context: [`specs/system-architecture-context.md`](./specs/system-architecture-context.md)
 
 ## Deployment snapshot
 

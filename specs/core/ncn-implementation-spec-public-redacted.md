@@ -1,16 +1,16 @@
-# RPC-NCN Implementation Specification (Public Redacted)
+# RPC-NCN Implementation Specification — Redacted
 
-> **Status:** Public redacted specification
-> **Source:** Internal implementation spec v1.1 (redacted for external sharing)
+> **Status:** Redacted specification
+> **Source:** Implementation model v1.1 (redacted for external sharing)
 > **Last Updated:** 2026-03-04
 
 ## Purpose
-This document publishes the core implementation model and design rationale that are safe to share publicly, while omitting sensitive implementation details and private operational information.
+This document publishes the core implementation model and design rationale that are safe to share publicly, while omitting sensitive implementation and operational details.
 
 ## Redaction scope
 The following categories are intentionally omitted or generalized:
 - Internal deployment and operational procedures
-- Private infrastructure details and non-public endpoints
+- Sensitive infrastructure details and restricted endpoints
 - Security-sensitive implementation specifics
 - Private business/commercial analysis
 
@@ -21,7 +21,7 @@ The following categories are intentionally omitted or generalized:
 
 ---
 
-## 1) System overview (public)
+## 1) System overview
 RPC-NCN provides verifiable RPC integrity through:
 1. Multi-operator response collection
 2. Stake-weighted consensus (>= 2/3 active stake)
@@ -36,7 +36,7 @@ RPC-NCN provides verifiable RPC integrity through:
 
 ---
 
-## 2) Entity model (public)
+## 2) Entity model
 Key entities (high-level):
 - NCN state
 - Operator state
@@ -54,7 +54,7 @@ Key entities (high-level):
 
 ---
 
-## 3) Consensus and correctness model (public)
+## 3) Consensus and correctness model
 ### Per-request (off-chain)
 1. Gateway forwards request to selected operators.
 2. Operators return response + response hash.
@@ -72,14 +72,14 @@ Key entities (high-level):
 
 ---
 
-## 4) Penalty model (public)
+## 4) Penalty model
 Current public model:
 - Offense-based penalties and suspension thresholds are active.
 - Slashing remains future/conditional on ecosystem support and governance readiness.
 
 ---
 
-## 5) Security assumptions (public)
+## 5) Security assumptions
 - Safety target: tolerate up to <1/3 malicious active stake.
 - Attestations must be signed and verifiable.
 - Stake weights are sourced from authoritative on-chain restaking state.
@@ -87,7 +87,7 @@ Current public model:
 
 ---
 
-## 6) Future directions (public)
+## 6) Future directions
 - richer proof systems for response correctness
 - expanded operator scaling and signature aggregation methods
 - broader restaking integration and governance hardening
@@ -95,6 +95,6 @@ Current public model:
 ---
 
 ## 7) Redaction notes
-Sections from the internal implementation spec were excluded where they may expose private infrastructure, operational controls, or sensitive security details.
+Sections from the source implementation model were excluded where they may expose sensitive infrastructure, operational controls, or security details.
 
 For collaboration requests requiring deeper technical review, use maintainer-managed access workflows.

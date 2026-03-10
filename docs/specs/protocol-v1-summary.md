@@ -1,10 +1,10 @@
-# Protocol v1 Summary (Public)
+# Protocol v1 Summary
 
 **Status:** informative summary. Normative behavior is defined in `specs/core/poc-protocol-v1-draft.md`.
 
 ## Objective
 
-Deliver verifiable RPC integrity for high-assurance use cases in the Jito ecosystem.
+Deliver verifiable RPC integrity for high-assurance workflows.
 
 ## POC v1 core mechanics
 
@@ -15,8 +15,8 @@ Deliver verifiable RPC integrity for high-assurance use cases in the Jito ecosys
 
 ## Current implementation status
 
-See: [`docs/poc-status.md`](../poc-status.md)
+See: [POC Status](../poc-status.md)
 
 ## Visual context
 
-See: [`docs/visualizations.md`](../visualizations.md)
+See: [Visualizations](../visualizations.md)

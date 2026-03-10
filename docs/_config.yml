@@ -1,8 +1,12 @@
 title: RPC-NCN Protocol
-description: Verifiable, high-assurance RPC protocol for the Jito ecosystem
+description: Verifiable high-assurance RPC protocol documentation
 markdown: kramdown
 theme: minima
 header_pages:
   - index.md
+  - specs/protocol-v1-summary.md
+  - specs/system-architecture-context.md
   - poc-status.md
   - visualizations.md
+  - related-content.md
+  - publication-policy.md

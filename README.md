@@ -6,10 +6,11 @@ Public repository for the RPC-NCN protocol contract and public documentation.
 
 - GitHub Pages source: `docs/`
 - Start page: `docs/index.md`
-- Includes:
-  - proposal-aligned narrative for Jito ecosystem context
-  - POC status snapshot
-  - visual architecture/implementation artifacts
+- Core docs:
+  - Protocol summary: `docs/specs/protocol-v1-summary.md`
+  - Architecture context: `docs/specs/system-architecture-context.md`
+  - POC status snapshot: `docs/poc-status.md`
+  - Visual artifacts: `docs/visualizations.md`
 
 ## Normative boundary
 
@@ -34,7 +35,6 @@ Informative/process docs live in `docs/`, `rfcs/`, `governance/`, `PUBLICATION_P
 | Migration backlog | `docs/MIGRATION_CHECKLIST.md` |
 | POC protocol v1 draft (normative) | `specs/core/poc-protocol-v1-draft.md` |
 
-## Forum context
+## Related background
 
-This repository supports:
-- https://forum.jito.network/t/blocksize-rpc-ncn-verifiable-high-assurance-infrastructure-for-the-jito-ecosystem/928
+- Community context links are collected in `docs/related-content.md`.
