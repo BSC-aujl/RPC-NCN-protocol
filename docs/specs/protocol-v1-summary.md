@@ -20,3 +20,18 @@ See: [POC Status](../poc-status.md)
 ## Visual context
 
 See: [Visualizations](../visualizations.md)
+
+## Normative module map
+
+- Specs index: `../../specs/INDEX.md`
+- Consensus rules: `../../specs/consensus/quorum-verification-v1.md`
+- State invariants: `../../specs/onchain-state/state-model-v1.md`
+- Economics rules: `../../specs/economics/reward-penalty-v1.md`
+- Wire/serialization rules: `../../specs/wire-format/serialization-rules-v1.md`
+
+## Conformance + compatibility
+
+- Schemas: `../../schemas/README.md`
+- Reference vectors: `../../reference-test-vectors/README.md`
+- Compliance criteria: `../../compliance-tests/README.md`
+- Versioning policy: `../../versioning/COMPATIBILITY_POLICY.md`

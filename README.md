@@ -23,6 +23,18 @@ Normative protocol behavior is defined in:
 
 Informative/process docs live in `docs/`, `rfcs/`, `governance/`, `PUBLICATION_POLICY.md`.
 
+## Protocol artifact indexes
+
+| Artifact family | Index | Status |
+| --- | --- | --- |
+| Specs | `specs/` | Normative |
+| Schemas | `schemas/README.md` | Normative |
+| Reference vectors | `reference-test-vectors/README.md` | Normative |
+| Compliance tests | `compliance-tests/README.md` | Normative |
+| Versioning | `versioning/README.md` | Normative |
+| RFCs | `rfcs/README.md` | Informative/process |
+| Governance | `governance/README.md` | Informative/process |
+
 ## Canonical ownership
 
 | Topic | Canonical file |
@@ -33,6 +45,9 @@ Informative/process docs live in `docs/`, `rfcs/`, `governance/`, `PUBLICATION_P
 | Contribution workflow | `docs/CONTRIBUTING.md` |
 | Publication safety + release gates | `PUBLICATION_POLICY.md` |
 | Migration backlog | `docs/MIGRATION_CHECKLIST.md` |
+| Specs index (normative map) | `specs/INDEX.md` |
+| Versioning + compatibility policy | `versioning/COMPATIBILITY_POLICY.md` |
+| Governance update flow | `governance/PROTOCOL_UPDATE_FLOW.md` |
 | POC protocol v1 draft (normative) | `specs/core/poc-protocol-v1-draft.md` |
 
 ## Related background

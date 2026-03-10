@@ -6,6 +6,13 @@
 - **Target Version:** vX.Y
 - **Discussion:** <issue/discussion link>
 
+Related indexes:
+- Schemas: `../schemas/README.md`
+- Reference vectors: `../reference-test-vectors/README.md`
+- Compliance tests: `../compliance-tests/README.md`
+- Versioning policy: `../versioning/README.md`
+- Governance workflow: `../governance/README.md`
+
 ## 1. Summary
 A short, plain-language statement of the proposal.
 

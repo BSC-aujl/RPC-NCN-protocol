@@ -5,6 +5,8 @@ title: Visualizations
 
 # POC visualizations
 
+**Status:** informative visuals (non-normative). Normative behavior is defined in `specs/`.
+
 This page collects the current diagrams used for architecture and implementation communication.
 
 ## 1) System architecture context

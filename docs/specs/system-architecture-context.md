@@ -34,4 +34,6 @@ RPC-NCN POC v1 has four implementation parts:
 
 For normative details, use:
 - `specs/core/poc-protocol-v1-draft.md`
-- `specs/core/ncn-implementation-spec.md`
+
+For informative implementation context, use:
+- `specs/core/ncn-implementation-spec-public-redacted.md`

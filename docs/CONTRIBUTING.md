@@ -22,13 +22,15 @@ Out of scope:
 1. Classify your change:
    - **Normative protocol behavior change**, or
    - **Informative/editorial/process only**
-2. If behavior changes, create/update an RFC in `rfcs/`.
-3. Add explicit compatibility impact (backward/forward/breaking).
-4. Update linked artifacts when applicable:
+2. If behavior changes, create/update an RFC in `rfcs/` (use `rfcs/RFC-TEMPLATE.md`).
+3. Add explicit compatibility impact (backward/forward/breaking) per `versioning/COMPATIBILITY_POLICY.md`.
+4. Ensure governance flow expectations are met (`governance/PROTOCOL_UPDATE_FLOW.md`).
+5. Update linked artifacts when applicable:
    - `schemas/`
    - `reference-test-vectors/`
    - `compliance-tests/`
-5. Keep wording precise and unambiguous in normative text.
+   - `versioning/`
+6. Keep wording precise and unambiguous in normative text.
 
 ## PR expectations
 

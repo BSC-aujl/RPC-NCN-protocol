@@ -3,6 +3,14 @@
 > **Focus:** Integrity verification via stake-weighted consensus
 > **Deferred to v2:** Latency measurement, threshold signatures, dispute resolution
 
+## Normative artifact cross-links
+
+- Machine-readable schemas: `../../schemas/README.md`
+- Deterministic vectors: `../../reference-test-vectors/README.md`
+- Compliance definitions: `../../compliance-tests/README.md`
+- Version compatibility map: `../../versioning/README.md`
+- Behavior change proposals: `../../rfcs/README.md`
+
 ## Overview
 
 The NCN ensures RPC response integrity through:

@@ -5,6 +5,8 @@ title: RPC-NCN Protocol
 
 # RPC-NCN Protocol
 
+**Status:** informative landing page. Normative behavior is defined in `specs/`, `schemas/`, `reference-test-vectors/`, `compliance-tests/`, and `versioning/`.
+
 <div class="ncn-hero">
   <p class="ncn-kicker">Verifiable, high-assurance RPC</p>
   <p class="ncn-lead">RPC-NCN adds independent verification on top of standard RPC flows using stake-weighted quorum, signed attestations, and on-chain accountability.</p>
@@ -68,5 +70,15 @@ title: RPC-NCN Protocol
 | Related context | [Related Content](./related-content.md) |
 | Canonical protocol draft (normative full text) | `specs/core/poc-protocol-v1-draft.md` |
 | Redacted implementation model | `specs/core/ncn-implementation-spec-public-redacted.md` |
+
+## Artifact map (for maintainers/implementers)
+
+- Specs index: `specs/INDEX.md`
+- Schemas: `schemas/README.md`
+- Reference vectors: `reference-test-vectors/README.md`
+- Compliance criteria: `compliance-tests/README.md`
+- Versioning policy: `versioning/COMPATIBILITY_POLICY.md`
+- Governance flow: `governance/PROTOCOL_UPDATE_FLOW.md`
+- RFC process: `rfcs/RFC-TEMPLATE.md`
 
 > Normative protocol behavior is defined in `specs/`, `schemas/`, `reference-test-vectors/`, `compliance-tests/`, and `versioning/`.

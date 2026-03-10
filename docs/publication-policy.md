@@ -5,6 +5,8 @@ title: Publication Policy
 
 # Publication policy
 
+**Status:** informative summary page (governance/process). Canonical policy text is in `PUBLICATION_POLICY.md`.
+
 This page summarizes public-release safety requirements for docs published from this repository.
 
 ## Do publish

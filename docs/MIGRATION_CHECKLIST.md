@@ -3,29 +3,29 @@
 Tracking remaining protocol artifacts to copy, sanitize, and publish.
 
 ## Specs
-- [ ] Core protocol spec split into stable modules (`specs/core/*`)
-- [ ] Wire format and canonical serialization rules (`specs/wire-format/*`)
-- [ ] Consensus/quorum verification rules (`specs/consensus/*`)
-- [ ] On-chain state model and invariants (`specs/onchain-state/*`)
-- [ ] Economics (staking/rewards/slashing) protocol rules (`specs/economics/*`)
+- [x] Core protocol spec split into stable modules (`specs/core/*`)
+- [x] Wire format and canonical serialization rules (`specs/wire-format/*`)
+- [x] Consensus/quorum verification rules (`specs/consensus/*`)
+- [x] On-chain state model and invariants (`specs/onchain-state/*`)
+- [x] Economics (staking/rewards/slashing) protocol rules (`specs/economics/*`)
 
 ## Schemas and validation
 - [ ] Migrate machine-readable schemas to `schemas/`
-- [ ] Add schema version map and changelog
+- [x] Add schema version map and changelog
 - [ ] Verify schema/spec parity
 
 ## Conformance assets
 - [ ] Migrate deterministic reference vectors to `reference-test-vectors/`
 - [ ] Migrate implementation-agnostic compliance definitions to `compliance-tests/`
-- [ ] Document expected pass/fail criteria per version
+- [x] Document expected pass/fail criteria per version
 
 ## Process and governance
 - [ ] Backfill RFC history for accepted protocol changes
-- [ ] Publish governance/approval flow for protocol updates
-- [ ] Publish semantic versioning and compatibility policy
+- [x] Publish governance/approval flow for protocol updates
+- [x] Publish semantic versioning and compatibility policy
 
 ## Publication hardening
-- [ ] Remove internal-only operational details
-- [ ] Remove credentials/endpoints/infra identifiers
-- [ ] Mark each section as normative vs informative
-- [ ] Add cross-links between specs, RFCs, schemas, and tests
+- [x] Remove internal-only operational details
+- [x] Remove credentials/endpoints/infra identifiers
+- [x] Mark each section as normative vs informative
+- [x] Add cross-links between specs, RFCs, schemas, and tests

@@ -5,6 +5,8 @@ title: POC Status
 
 # POC implementation status snapshot
 
+**Status:** informative implementation snapshot (non-normative). Canonical protocol behavior is defined in `specs/`.
+
 This page tracks implementation progress of the RPC-NCN proof-of-concept against protocol v1.
 
 ## Current state
@@ -32,11 +34,11 @@ This page tracks implementation progress of the RPC-NCN proof-of-concept against
 
 ## Deployment snapshot
 
-| Network | Program ID | Status |
-|---|---|---|
-| localnet | `B2Y3DxUw6LXGYGPeuyU4qiRmHM3AFpUqLbLgaethcV8r` | ✅ Active |
-| testnet | `DztacWhGG8zA8y75shaHa4bgmniqhUkBLb1AXEbwq4T4` | ✅ Active |
-| mainnet | - | ⏳ Pending |
+| Environment tier | Status |
+|---|---|
+| local development | ✅ Active |
+| public test environment | ✅ Active |
+| production environment | ⏳ Pending |
 
 ## Visual artifacts
 
