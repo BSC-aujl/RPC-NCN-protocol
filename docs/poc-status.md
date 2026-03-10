@@ -1,22 +1,29 @@
 ---
 layout: default
-title: POC Status
+title: Protocol v1 + POC Status
 ---
 
-# POC implementation status snapshot
+# Protocol v1 + POC status
 
-**Status:** informative implementation snapshot (non-normative). Canonical protocol behavior is defined in `specs/`.
+## Protocol v1 at a glance
 
-This page tracks implementation progress of the RPC-NCN proof-of-concept against protocol v1.
+RPC-NCN v1 focuses on verifiable response integrity for high-assurance RPC workflows.
 
-## Current state
+### Core mechanics
+
+- stake-weighted response agreement (≥ 2/3)
+- operator-side response hash chaining
+- interval-based on-chain attestations
+- epoch-based reward/offense accounting
+
+## Implementation snapshot
 
 | Component | Status | Evidence |
 |---|---|---|
-| On-chain program | ✅ Ready | Integration tests and testnet deployment |
-| Gateway | ✅ Ready | Stake-weighted aggregation and interval services |
-| Operator node | ✅ Ready | Hash chaining + attestation flow |
-| E2E lifecycle | ✅ Ready | Interval/epoch flow verified |
+| On-chain program | ✅ Ready | integration tests + public test deployment |
+| Gateway | ✅ Ready | stake-weighted aggregation + interval services |
+| Operator node | ✅ Ready | hash chaining + attestation flow |
+| E2E lifecycle | ✅ Ready | interval/epoch flow verification |
 
 ## Test snapshot
 
@@ -24,13 +31,7 @@ This page tracks implementation progress of the RPC-NCN proof-of-concept against
 |---|---:|---|
 | Contract integration | 40 | registration, attestations, quorum, state |
 | Gateway unit tests | 109 | consensus, routing, interval/finalization, security |
-| Protocol E2E | 16 | end-to-end protocol lifecycle |
-
-## Protocol alignment
-
-- Canonical protocol text: `specs/core/poc-protocol-v1-draft.md`
-- Public implementation model (redacted): `specs/core/ncn-implementation-spec-public-redacted.md`
-- Architecture context: [`specs/system-architecture-context.md`](./specs/system-architecture-context.md)
+| Protocol E2E | 16 | end-to-end lifecycle |
 
 ## Deployment snapshot
 
@@ -40,11 +41,12 @@ This page tracks implementation progress of the RPC-NCN proof-of-concept against
 | public test environment | ✅ Active |
 | production environment | ⏳ Pending |
 
-## Visual artifacts
-
-- [Architecture + component diagrams + implementation map](./visualizations.md)
-
-## Known current limits
+## Current limits
 
 - no production slashing integration yet (offense model in POC)
-- mainnet readiness pending additional hardening/audit/governance gates
+- production readiness still depends on additional hardening, audit, and governance gates
+
+## More details
+
+- [Visualizations](./visualizations.md)
+- [Repository README](https://github.com/BSC-aujl/RPC-NCN-protocol#readme)

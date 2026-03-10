@@ -5,8 +5,6 @@ title: Related Content
 
 # Related content
 
-**Status:** informative external references only.
-
 External links for ecosystem context:
 
 - [Community discussion thread: RPC-NCN overview](https://forum.jito.network/t/blocksize-rpc-ncn-verifiable-high-assurance-infrastructure-for-the-jito-ecosystem/928)

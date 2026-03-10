@@ -1,7 +1,5 @@
 # RPC-NCN Threat Model (Public Summary)
 
-**Status:** informative security context (non-normative).
-
 Normative protocol behavior is defined in `specs/`.
 
 ## Security objective

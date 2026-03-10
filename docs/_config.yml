@@ -4,9 +4,12 @@ markdown: kramdown
 theme: minima
 header_pages:
   - index.md
-  - specs/protocol-v1-summary.md
-  - specs/system-architecture-context.md
   - poc-status.md
   - visualizations.md
-  - related-content.md
+  - request-access.md
+exclude:
+  - CONTRIBUTING.md
+  - MIGRATION_CHECKLIST.md
   - publication-policy.md
+  - related-content.md
+  - security/THREAT_MODEL.md

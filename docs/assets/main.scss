@@ -51,6 +51,38 @@
   text-decoration: none;
 }
 
+.ncn-chip-primary {
+  background: #2d62b7;
+  color: #fff;
+  border-color: #2d62b7;
+}
+
+.ncn-chip-primary:hover {
+  background: #214a8b;
+  border-color: #214a8b;
+  color: #fff;
+}
+
+.ncn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 0.55rem 0.9rem;
+  background: #2d62b7;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid #2d62b7;
+}
+
+.ncn-cta:hover {
+  background: #214a8b;
+  border-color: #214a8b;
+  color: #fff;
+  text-decoration: none;
+}
+
 .ncn-stat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
