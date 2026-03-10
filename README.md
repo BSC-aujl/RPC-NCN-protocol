@@ -1,55 +1,23 @@
 # RPC-NCN Protocol
 
-Public repository for the RPC-NCN protocol contract and public documentation.
+Public repository for RPC-NCN protocol documentation and artifacts.
 
-## Public docs site
+## GitHub Pages
 
-- GitHub Pages source: `docs/`
-- Start page: `docs/index.md`
-- Core docs:
-  - Protocol summary: `docs/specs/protocol-v1-summary.md`
-  - Architecture context: `docs/specs/system-architecture-context.md`
-  - POC status snapshot: `docs/poc-status.md`
-  - Visual artifacts: `docs/visualizations.md`
+- Site: https://bsc-aujl.github.io/RPC-NCN-protocol/
+- Source: `docs/`
 
-## Normative boundary
+## Repository structure
 
-Normative protocol behavior is defined in:
-- `specs/`
-- `schemas/`
-- `reference-test-vectors/`
-- `compliance-tests/`
-- `versioning/`
+- `docs/` — public-facing site content
+- `specs/` — protocol specifications
+- `schemas/` — schema artifacts and version mapping
+- `reference-test-vectors/` — deterministic vector artifacts
+- `compliance-tests/` — compliance definitions
+- `versioning/` — compatibility/versioning policy
+- `rfcs/` — protocol change proposals
+- `governance/` — update process and open questions
 
-Informative/process docs live in `docs/`, `rfcs/`, `governance/`, `PUBLICATION_POLICY.md`.
+## Canonical protocol draft
 
-## Protocol artifact indexes
-
-| Artifact family | Index | Status |
-| --- | --- | --- |
-| Specs | `specs/` | Normative |
-| Schemas | `schemas/README.md` | Normative |
-| Reference vectors | `reference-test-vectors/README.md` | Normative |
-| Compliance tests | `compliance-tests/README.md` | Normative |
-| Versioning | `versioning/README.md` | Normative |
-| RFCs | `rfcs/README.md` | Informative/process |
-| Governance | `governance/README.md` | Informative/process |
-
-## Canonical ownership
-
-| Topic | Canonical file |
-| --- | --- |
-| Public docs landing page | `docs/index.md` |
-| POC status snapshot | `docs/poc-status.md` |
-| Visual artifacts | `docs/visualizations.md` |
-| Contribution workflow | `docs/CONTRIBUTING.md` |
-| Publication safety + release gates | `PUBLICATION_POLICY.md` |
-| Migration backlog | `docs/MIGRATION_CHECKLIST.md` |
-| Specs index (normative map) | `specs/INDEX.md` |
-| Versioning + compatibility policy | `versioning/COMPATIBILITY_POLICY.md` |
-| Governance update flow | `governance/PROTOCOL_UPDATE_FLOW.md` |
-| POC protocol v1 draft (normative) | `specs/core/poc-protocol-v1-draft.md` |
-
-## Related background
-
-- Community context links are collected in `docs/related-content.md`.
+- `specs/core/poc-protocol-v1-draft.md`

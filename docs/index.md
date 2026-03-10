@@ -13,7 +13,7 @@ title: RPC-NCN Protocol
 <div class="ncn-chip-row">
   <a class="ncn-chip" href="./poc-status.md">Protocol v1 + POC status</a>
   <a class="ncn-chip" href="./visualizations.md">Visualizations</a>
-  <a class="ncn-chip ncn-chip-primary" href="./request-access.md">Request access</a>
+  <a class="ncn-chip ncn-chip-primary" href="https://blocksize.info/contact/" target="_blank" rel="noopener">Request access</a>
 </div>
 
 ## Why RPC-NCN
@@ -26,13 +26,18 @@ title: RPC-NCN Protocol
 
 ## Request-to-proof flow
 
-<div class="ncn-flow">
-  <div><strong>1</strong><span>Client sends an RPC request.</span></div>
-  <div><strong>2</strong><span>Gateway fans out to operators.</span></div>
-  <div><strong>3</strong><span>Operators return response + hash.</span></div>
-  <div><strong>4</strong><span>Gateway accepts the quorum hash (≥ 2/3 stake).</span></div>
-  <div><strong>5</strong><span>Operators submit interval attestations.</span></div>
-  <div><strong>6</strong><span>Epoch finalization updates correctness and reward/offense state.</span></div>
+<div class="ncn-flow-line">
+  <div class="ncn-flow-step"><strong>1</strong><span>Client sends an RPC request.</span></div>
+  <div class="ncn-flow-arrow">→</div>
+  <div class="ncn-flow-step"><strong>2</strong><span>Gateway fans out to operators.</span></div>
+  <div class="ncn-flow-arrow">→</div>
+  <div class="ncn-flow-step"><strong>3</strong><span>Operators return response + hash.</span></div>
+  <div class="ncn-flow-arrow">→</div>
+  <div class="ncn-flow-step"><strong>4</strong><span>Gateway accepts the quorum hash (≥ 2/3 stake).</span></div>
+  <div class="ncn-flow-arrow">→</div>
+  <div class="ncn-flow-step"><strong>5</strong><span>Operators submit interval attestations.</span></div>
+  <div class="ncn-flow-arrow">→</div>
+  <div class="ncn-flow-step"><strong>6</strong><span>Epoch finalization updates correctness and reward/offense state.</span></div>
 </div>
 
 ## System architecture

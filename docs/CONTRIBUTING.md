@@ -15,7 +15,7 @@ Allowed:
 Out of scope:
 - Runtime/service implementation code
 - Internal operational runbooks
-- Sensitive or non-public material (see [Publication Policy](./publication-policy.md))
+- Sensitive or non-public material (see [Publication Policy](../PUBLICATION_POLICY.md))
 
 ## Required flow
 
@@ -37,7 +37,7 @@ Out of scope:
 - Keep PRs focused and reviewable.
 - Link related issues/RFCs.
 - Include migration notes for implementers when relevant.
-- Confirm content is publication-safe per [Publication Policy](./publication-policy.md).
+- Confirm content is publication-safe per [Publication Policy](../PUBLICATION_POLICY.md).
 
 ## Review
 

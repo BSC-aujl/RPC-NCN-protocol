@@ -9,8 +9,8 @@ This is the canonical policy for what may be published in this repository.
 
 ## Publication model
 
-- Curated, copy-first migration from source monorepo (`repos/RPC-NCN`)
-- Protocol-focused content only
+- Protocol-focused publication model
+- Public-safe documentation and artifacts only
 - No implementation source code or operational internals
 
 ## Prohibited content (must not be published)
@@ -37,4 +37,3 @@ All public changes should pass:
 ## Cross-references
 
 - Contribution workflow: `docs/CONTRIBUTING.md`
-- Migration backlog: `docs/MIGRATION_CHECKLIST.md`

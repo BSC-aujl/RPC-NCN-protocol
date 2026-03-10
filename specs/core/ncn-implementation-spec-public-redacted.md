@@ -97,4 +97,4 @@ Current public model:
 ## 7) Redaction notes
 Sections from the source implementation model were excluded where they may expose sensitive infrastructure, operational controls, or security details.
 
-For collaboration requests requiring deeper technical review, use maintainer-managed access workflows.
+For deeper technical review requests, use the contact channel at `https://blocksize.info/contact/`.
