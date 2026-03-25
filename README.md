@@ -20,6 +20,8 @@ RPC-NCN adds independent verification on top of standard RPC flows using stake-w
 - **Verifiability:** produce signed attestations linked to interval and epoch outcomes.
 - **Accountability:** finalize correctness outcomes for transparent reward/offense handling.
 
+For the stylized key-concepts layout, see [docs/index#key-concepts](./docs/index.html#key-concepts).
+
 ### Request-to-proof flow
 
 1. Client sends an RPC request.

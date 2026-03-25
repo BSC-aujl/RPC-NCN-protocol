@@ -4,3 +4,4 @@ markdown: kramdown
 theme: minima
 header_pages:
   - poc-status.md
+  - specs/poc2/index.md

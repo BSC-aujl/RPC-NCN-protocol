@@ -10,6 +10,14 @@ title: RPC-NCN Protocol
   <p class="ncn-lead">RPC-NCN adds independent verification on top of standard RPC flows using stake-weighted quorum, signed attestations, and on-chain accountability.</p>
 </div>
 
+## Key concepts
+
+<div class="ncn-stat-grid">
+  <div class="ncn-stat-card"><strong>Interval</strong><span>A rolling collection window for operator responses, hash chaining, and window-consensus proof creation before on-chain submission.</span></div>
+  <div class="ncn-stat-card"><strong>Epoch</strong><span>A numbered sequence of intervals whose finalization reconciles rewards, offenses, and staking changes.</span></div>
+  <div class="ncn-stat-card"><strong>Stake-weighted quorum</strong><span>The ≥2/3 share of active stake (measured in bps) that must agree on a hash or proof before the gateway or contract accepts it.</span></div>
+</div>
+
 ## Why RPC-NCN
 
 <div class="ncn-stat-grid">
@@ -51,10 +59,18 @@ title: RPC-NCN Protocol
     <span>System architecture (click to zoom + pan)</span>
   </button>
 </div>
+<p>Read the [architecture brief](./architecture.html) for the component map, request-to-proof narrative, and deeper responsibility breakdowns that mirror the [RPC-NCN-core reference material](https://github.com/BSC-aujl/RPC-NCN-core).</p>
+
+## Proof & verification
+
+- [Value proposition](./value-proposition.html) ties reliability, integrity, latency, and SLA claims to the implemented components and verification automation in the [RPC-NCN-core repository](https://github.com/BSC-aujl/RPC-NCN-core).
+- [POC status](./poc-status.html) lays out which components are delivered, the concrete evidence per component, and which capabilities remain aspirational with links back to that same repository.
+- [Architecture brief](./architecture.html) complements these pages with the full component map and accountability narrative.
 
 ## Repository details
 
 - [Repository README (single-page reference)](https://github.com/BSC-aujl/RPC-NCN-protocol#readme)
+- [POC v2 Phase 0 locks](./specs/poc2/)
 
 ## Related background
 
