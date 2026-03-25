@@ -1,79 +1,54 @@
 ---
 layout: default
-title: RPC-NCN Protocol
+title: RPC NCN
 ---
 
-# RPC-NCN Protocol
+# RPC NCN
 
 <div class="ncn-hero">
-  <p class="ncn-kicker">Verifiable, high-assurance RPC</p>
-  <p class="ncn-lead">RPC-NCN adds independent verification on top of standard RPC flows using stake-weighted quorum, signed attestations, and on-chain accountability.</p>
+  <p class="ncn-kicker">Reliability and integrity for production RPC</p>
+  <p class="ncn-lead">RPC-NCN is designed for organizations that cannot afford RPC uncertainty. It combines resilient request handling with cryptographic verification so responses are both available and trustworthy.</p>
 </div>
 
-## Key concepts
+## What problem this solves
 
-<div class="ncn-stat-grid">
-  <div class="ncn-stat-card"><strong>Interval</strong><span>A rolling collection window for operator responses, hash chaining, and window-consensus proof creation before on-chain submission.</span></div>
-  <div class="ncn-stat-card"><strong>Epoch</strong><span>A numbered sequence of intervals whose finalization reconciles rewards, offenses, and staking changes.</span></div>
-  <div class="ncn-stat-card"><strong>Stake-weighted quorum</strong><span>The ≥2/3 share of active stake (measured in bps) that must agree on a hash or proof before the gateway or contract accepts it.</span></div>
-</div>
+Standard RPC setups often force a tradeoff between uptime and trust. RPC-NCN is built to remove that tradeoff:
 
-## Why RPC-NCN
+- <strong>RPC that always works</strong> through resilient request routing across independent operators.
+- <strong>Requests of proven integrity</strong> through quorum-backed agreement and proof-linked response handling.
 
-<div class="ncn-stat-grid">
-  <div class="ncn-stat-card"><strong>Integrity</strong><span>Detect inconsistent operator responses via stake-weighted hash agreement.</span></div>
-  <div class="ncn-stat-card"><strong>Verifiability</strong><span>Produce signed attestations linked to interval and epoch outcomes.</span></div>
-  <div class="ncn-stat-card"><strong>Accountability</strong><span>Finalize correctness outcomes for transparent reward/offense handling.</span></div>
-</div>
+## How RPC-NCN works (synopsis)
 
-## Request-to-proof flow
+1. A client sends a request through RPC-NCN.
+2. The gateway fans out execution to independent operators.
+3. Responses are compared using stake-weighted agreement.
+4. Only quorum-backed output is accepted.
+5. Integrity context is attached so the response can be trusted and audited.
 
-<div class="ncn-flow-vertical">
-  <div class="ncn-flow-step"><strong>1</strong><span>Client sends an RPC request.</span></div>
-  <div class="ncn-flow-arrow">↓</div>
-  <div class="ncn-flow-step"><strong>2</strong><span>Gateway fans out to operators.</span></div>
-  <div class="ncn-flow-arrow">↓</div>
-  <div class="ncn-flow-step"><strong>3</strong><span>Operators return response + hash.</span></div>
-  <div class="ncn-flow-arrow">↓</div>
-  <div class="ncn-flow-step"><strong>4</strong><span>Gateway accepts the quorum hash (≥ 2/3 stake).</span></div>
-  <div class="ncn-flow-arrow">↓</div>
-  <div class="ncn-flow-step"><strong>5</strong><span>Operators submit interval attestations.</span></div>
-  <div class="ncn-flow-arrow">↓</div>
-  <div class="ncn-flow-step"><strong>6</strong><span>Epoch finalization updates correctness and reward/offense state.</span></div>
-</div>
-
-## System architecture
-
-<div class="ncn-split">
-  <div class="ncn-card">
-    <h3>POC v1 components</h3>
-    <ul>
-      <li><strong>Gateway:</strong> request routing + stake-weighted aggregation</li>
-      <li><strong>Operators:</strong> RPC execution + signed attestations</li>
-      <li><strong>On-chain program:</strong> interval/epoch correctness accounting</li>
-      <li><strong>Client SDK:</strong> request and verification support</li>
-    </ul>
-  </div>
-  <button class="viz-card ncn-visual-button" data-viz-src="./specs/images/architecture-diagram.png" data-viz-title="System architecture">
-    <img src="./specs/images/architecture-diagram.png" alt="RPC-NCN system architecture diagram" />
-    <span>System architecture (click to zoom + pan)</span>
+<div class="viz-grid viz-grid-single">
+  <button class="viz-card" data-viz-src="./images/request-proof-flow.svg" data-viz-title="Request to proof flow">
+    <img src="./images/request-proof-flow.svg" alt="Request to proof flow for RPC-NCN" />
+    <span>Request-to-proof flow (click to zoom + pan)</span>
   </button>
 </div>
-<p>Read the [architecture brief](./architecture.html) for the component map, request-to-proof narrative, and deeper responsibility breakdowns that mirror the [RPC-NCN-core reference material](https://github.com/BSC-aujl/RPC-NCN-core).</p>
 
-## Proof & verification
+## System overview
 
-- [Value proposition](./value-proposition.html) ties reliability, integrity, latency, and SLA claims to the implemented components and verification automation in the [RPC-NCN-core repository](https://github.com/BSC-aujl/RPC-NCN-core).
-- [POC status](./poc-status.html) lays out which components are delivered, the concrete evidence per component, and which capabilities remain aspirational with links back to that same repository.
-- [Architecture brief](./architecture.html) complements these pages with the full component map and accountability narrative.
+<div class="viz-grid viz-grid-single">
+  <button class="viz-card" data-viz-src="./images/system-overview.svg" data-viz-title="RPC-NCN system overview">
+    <img src="./images/system-overview.svg" alt="RPC-NCN system overview diagram" />
+    <span>RPC-NCN system overview (click to zoom + pan)</span>
+  </button>
+</div>
 
-## Repository details
+## Who this is for
 
-- [Repository README (single-page reference)](https://github.com/BSC-aujl/RPC-NCN-protocol#readme)
-- [POC v2 Phase 0 locks](./specs/poc2/)
+- Companies and infrastructure teams with strict uptime and integrity requirements.
+- Decision-makers evaluating high-assurance RPC options.
+- Technical stakeholders who need a clear, implementation-aware protocol overview without full spec depth.
 
-## Related background
+## Next page
 
-- [Community discussion thread](https://forum.jito.network/t/blocksize-rpc-ncn-verifiable-high-assurance-infrastructure-for-the-jito-ecosystem/928)
+For the single implementation summary, go to [Protocol and POC status](./poc-status.md).
 
 {% include viz-modal.html %}

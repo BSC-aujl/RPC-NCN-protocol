@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">RPC-NCN system overview</title>
+  <desc id="desc">Diagram showing enterprise clients connecting to a gateway cluster, which fans out to independent operators and publishes verification to on-chain proofs.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f9fc}
+      .card{fill:#fff;stroke:#23406b;stroke-width:2}
+      .soft{fill:#edf3ff;stroke:#3b63a4;stroke-width:2}
+      .txt{font:600 24px Inter,Segoe UI,Arial,sans-serif;fill:#13233f}
+      .sub{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#243a60}
+      .line{stroke:#214f93;stroke-width:4;fill:none;marker-end:url(#arrow)}
+      .note{font:700 22px Inter,Segoe UI,Arial,sans-serif;fill:#0f2f5e}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#214f93"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1280" height="720" rx="20"/>
+
+  <rect class="card" x="70" y="220" width="260" height="180" rx="14"/>
+  <text class="txt" x="200" y="275" text-anchor="middle">Users / Apps</text>
+  <text class="sub" x="200" y="312" text-anchor="middle">Companies needing</text>
+  <text class="sub" x="200" y="340" text-anchor="middle">high-assurance RPC</text>
+
+  <rect class="soft" x="430" y="180" width="360" height="260" rx="16"/>
+  <text class="txt" x="610" y="240" text-anchor="middle">RPC-NCN Gateway</text>
+  <text class="sub" x="610" y="278" text-anchor="middle">routes requests</text>
+  <text class="sub" x="610" y="306" text-anchor="middle">collects operator responses</text>
+  <text class="sub" x="610" y="334" text-anchor="middle">accepts stake-weighted quorum</text>
+
+  <rect class="card" x="890" y="90" width="300" height="150" rx="14"/>
+  <text class="txt" x="1040" y="145" text-anchor="middle">Operator Set</text>
+  <text class="sub" x="1040" y="180" text-anchor="middle">independent RPC execution</text>
+
+  <rect class="card" x="890" y="285" width="300" height="150" rx="14"/>
+  <text class="txt" x="1040" y="340" text-anchor="middle">Integrity Engine</text>
+  <text class="sub" x="1040" y="375" text-anchor="middle">signature + proof checks</text>
+
+  <rect class="card" x="890" y="480" width="300" height="150" rx="14"/>
+  <text class="txt" x="1040" y="535" text-anchor="middle">On-chain Records</text>
+  <text class="sub" x="1040" y="570" text-anchor="middle">attestations + accountability</text>
+
+  <path class="line" d="M330 310 L430 310"/>
+  <path class="line" d="M790 230 L890 165"/>
+  <path class="line" d="M790 310 L890 360"/>
+  <path class="line" d="M790 390 L890 555"/>
+
+  <text class="note" x="640" y="560" text-anchor="middle">Result: RPC that always works + requests of proven integrity</text>
+</svg>

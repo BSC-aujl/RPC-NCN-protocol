@@ -1,7 +1,7 @@
-title: RPC-NCN Protocol
-description: Verifiable high-assurance RPC protocol documentation
+title: RPC NCN
+description: RPC that always works with requests of proven integrity
 markdown: kramdown
 theme: minima
 header_pages:
+  - index.md
   - poc-status.md
-  - specs/poc2/index.md

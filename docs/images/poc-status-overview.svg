@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Protocol and POC status overview</title>
+  <desc id="desc">Status board summarizing what is done in the single POC and what remains next.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f9fd}
+      .panel{fill:#fff;stroke:#294f86;stroke-width:2}
+      .h{font:700 28px Inter,Segoe UI,Arial,sans-serif;fill:#132645}
+      .t{font:600 22px Inter,Segoe UI,Arial,sans-serif;fill:#1c355f}
+      .s{font:400 18px Inter,Segoe UI,Arial,sans-serif;fill:#2b4066}
+      .ok{fill:#e6f7ec;stroke:#2a8a4a;stroke-width:2}
+      .wip{fill:#fff6e5;stroke:#b77a13;stroke-width:2}
+      .x{fill:#f2f4f8;stroke:#76839a;stroke-width:2}
+      .badge{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#10253f}
+    </style>
+  </defs>
+
+  <rect class="bg" width="1280" height="760" rx="20"/>
+  <text class="h" x="640" y="70" text-anchor="middle">One protocol • One POC implementation status</text>
+
+  <rect class="panel" x="70" y="120" width="1140" height="560" rx="16"/>
+
+  <rect class="ok" x="120" y="180" width="500" height="110" rx="12"/>
+  <text class="t" x="150" y="228">✅ Request handling and fan-out</text>
+  <text class="s" x="150" y="258">Gateway orchestration for high-assurance RPC traffic.</text>
+
+  <rect class="ok" x="120" y="320" width="500" height="110" rx="12"/>
+  <text class="t" x="150" y="368">✅ Integrity and proof packaging</text>
+  <text class="s" x="150" y="398">Quorum-backed responses with signed integrity context.</text>
+
+  <rect class="ok" x="120" y="460" width="500" height="110" rx="12"/>
+  <text class="t" x="150" y="508">✅ End-to-end protocol flow</text>
+  <text class="s" x="150" y="538">Request → operator agreement → proof-linked response.</text>
+
+  <rect class="wip" x="660" y="180" width="500" height="110" rx="12"/>
+  <text class="t" x="690" y="228">🟡 Production rollout hardening</text>
+  <text class="s" x="690" y="258">Operational controls and staged expansion plans.</text>
+
+  <rect class="wip" x="660" y="320" width="500" height="110" rx="12"/>
+  <text class="t" x="690" y="368">🟡 Expanded ecosystem access</text>
+  <text class="s" x="690" y="398">Partner onboarding through Blocksize access process.</text>
+
+  <rect class="x" x="660" y="460" width="500" height="110" rx="12"/>
+  <text class="t" x="690" y="508">⚪ Future protocol extensions</text>
+  <text class="s" x="690" y="538">Additional optional capabilities, not core to v1 summary.</text>
+
+  <text class="badge" x="640" y="640" text-anchor="middle">Current communication focus: reliability + proven integrity for production RPC consumers</text>
+</svg>
