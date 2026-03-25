@@ -77,8 +77,18 @@ jobs:
                 anchor = maybeAnchor || '';
 
                 if (!fs.existsSync(targetFile)) {
-                  broken.push(`${file}: missing file for link ${href}`);
-                  continue;
+                  if (targetFile.endsWith('.html')) {
+                    const mdTarget = targetFile.replace(/\.html$/i, '.md');
+                    if (fs.existsSync(mdTarget)) {
+                      targetFile = mdTarget;
+                    } else {
+                      broken.push(`${file}: missing file for link ${href}`);
+                      continue;
+                    }
+                  } else {
+                    broken.push(`${file}: missing file for link ${href}`);
+                    continue;
+                  }
                 }
               }
 
