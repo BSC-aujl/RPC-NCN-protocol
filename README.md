@@ -23,18 +23,7 @@ RPC-NCN is built for organizations that need both high RPC reliability and verif
 
 Even if strict quorum is not reached for a specific attempt, decentralization still provides strong assurance of getting a response.
 
-```mermaid
-flowchart LR
-    C[Client] --> G[RPC-NCN Gateway]
-    G --> O1[Operator A]
-    G --> O2[Operator B]
-    G --> O3[Operator C]
-    O1 --> Q[Stake-weighted quorum]
-    O2 --> Q
-    O3 --> Q
-    Q --> P[Proof-linked response]
-    P --> C
-```
+![How RPC-NCN works](docs/images/request-proof-flow.svg)
 
 ## Protocol and POC status
 

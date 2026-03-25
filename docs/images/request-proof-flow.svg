@@ -1,65 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="820" viewBox="0 0 1280 820" role="img" aria-labelledby="title desc">
-  <title id="title">Request to proof flow</title>
-  <desc id="desc">Flow from request submission to decentralized execution, quorum evaluation, proof packaging, and response delivery.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="860" viewBox="0 0 1280 860" role="img" aria-labelledby="title desc">
+  <title id="title">How RPC-NCN works</title>
+  <desc id="desc">Six-step flow from request intake to decentralized routing, quorum integrity checks, fallback reliability, and response delivery.</desc>
   <defs>
     <style>
       .bg{fill:#f8fafe}
       .step{fill:#fff;stroke:#28508a;stroke-width:2}
       .n{fill:#1f4a84}
-      .nt{font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#fff}
-      .t{font:600 20px Inter,Segoe UI,Arial,sans-serif;fill:#16284a}
-      .s{font:400 16px Inter,Segoe UI,Arial,sans-serif;fill:#2b3f64}
+      .nt{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#fff}
+      .t{font:600 19px Inter,Segoe UI,Arial,sans-serif;fill:#16284a}
+      .s{font:400 15px Inter,Segoe UI,Arial,sans-serif;fill:#2b3f64}
       .line{stroke:#2b5ca3;stroke-width:3;fill:none;marker-end:url(#arrow)}
-      .footer{font:700 19px Inter,Segoe UI,Arial,sans-serif;fill:#1d3660}
+      .footer{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#1d3660}
     </style>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
       <path d="M0,0 L0,6 L9,3 z" fill="#2b5ca3"/>
     </marker>
   </defs>
 
-  <rect class="bg" width="1280" height="820" rx="20"/>
+  <rect class="bg" width="1280" height="860" rx="20"/>
 
-  <g transform="translate(70,70)">
-    <rect class="step" x="0" y="0" width="530" height="105" rx="12"/>
-    <circle class="n" cx="46" cy="52" r="22"/><text class="nt" x="46" y="58" text-anchor="middle">1</text>
-    <text class="t" x="86" y="46">Client sends RPC request</text>
-    <text class="s" x="86" y="74">Gateway receives the request plus context metadata.</text>
+  <g transform="translate(60,70)">
+    <rect class="step" x="0" y="0" width="540" height="120" rx="12"/>
+    <circle class="n" cx="48" cy="60" r="22"/><text class="nt" x="48" y="66" text-anchor="middle">1</text>
+    <text class="t" x="88" y="53">Client sends RPC request</text>
+    <text class="s" x="88" y="80">Gateway receives request payload.</text>
+    <text class="s" x="88" y="102">Request metadata is attached.</text>
 
-    <path class="line" d="M265 105 L265 145"/>
+    <path class="line" d="M270 120 L270 165"/>
 
-    <rect class="step" x="0" y="145" width="530" height="105" rx="12"/>
-    <circle class="n" cx="46" cy="197" r="22"/><text class="nt" x="46" y="203" text-anchor="middle">2</text>
-    <text class="t" x="86" y="191">Gateway fans out to decentralized operators</text>
-    <text class="s" x="86" y="219">Parallel paths maximize response availability.</text>
+    <rect class="step" x="0" y="165" width="540" height="120" rx="12"/>
+    <circle class="n" cx="48" cy="225" r="22"/><text class="nt" x="48" y="231" text-anchor="middle">2</text>
+    <text class="t" x="88" y="218">Gateway fans out to operators</text>
+    <text class="s" x="88" y="245">Independent nodes execute in parallel.</text>
+    <text class="s" x="88" y="267">This improves response availability.</text>
 
-    <path class="line" d="M265 250 L265 290"/>
+    <path class="line" d="M270 285 L270 330"/>
 
-    <rect class="step" x="0" y="290" width="530" height="105" rx="12"/>
-    <circle class="n" cx="46" cy="342" r="22"/><text class="nt" x="46" y="348" text-anchor="middle">3</text>
-    <text class="t" x="86" y="336">Responses are compared</text>
-    <text class="s" x="86" y="364">Stake-weighted agreement is evaluated.</text>
+    <rect class="step" x="0" y="330" width="540" height="120" rx="12"/>
+    <circle class="n" cx="48" cy="390" r="22"/><text class="nt" x="48" y="396" text-anchor="middle">3</text>
+    <text class="t" x="88" y="383">Responses are compared</text>
+    <text class="s" x="88" y="410">Gateway computes stake-weighted agreement.</text>
+    <text class="s" x="88" y="432">Integrity checks are prepared.</text>
   </g>
 
   <g transform="translate(680,70)">
-    <rect class="step" x="0" y="0" width="530" height="105" rx="12"/>
-    <circle class="n" cx="46" cy="52" r="22"/><text class="nt" x="46" y="58" text-anchor="middle">4</text>
-    <text class="t" x="86" y="46">Quorum decision</text>
-    <text class="s" x="86" y="74">If quorum passes, integrity is cryptographically proven.</text>
+    <rect class="step" x="0" y="0" width="540" height="120" rx="12"/>
+    <circle class="n" cx="48" cy="60" r="22"/><text class="nt" x="48" y="66" text-anchor="middle">4</text>
+    <text class="t" x="88" y="53">Quorum decision</text>
+    <text class="s" x="88" y="80">If quorum passes, integrity is proven.</text>
+    <text class="s" x="88" y="102">Proof context is attached to response.</text>
 
-    <path class="line" d="M265 105 L265 145"/>
+    <path class="line" d="M270 120 L270 165"/>
 
-    <rect class="step" x="0" y="145" width="530" height="105" rx="12"/>
-    <circle class="n" cx="46" cy="197" r="22"/><text class="nt" x="46" y="203" text-anchor="middle">5</text>
-    <text class="t" x="86" y="191">Fallback reliability path</text>
-    <text class="s" x="86" y="219">Even without quorum, decentralization still drives response continuity.</text>
+    <rect class="step" x="0" y="165" width="540" height="120" rx="12"/>
+    <circle class="n" cx="48" cy="225" r="22"/><text class="nt" x="48" y="231" text-anchor="middle">5</text>
+    <text class="t" x="88" y="218">Fallback reliability path</text>
+    <text class="s" x="88" y="245">If strict quorum is missed,</text>
+    <text class="s" x="88" y="267">decentralization still drives continuity.</text>
 
-    <path class="line" d="M265 250 L265 290"/>
+    <path class="line" d="M270 285 L270 330"/>
 
-    <rect class="step" x="0" y="290" width="530" height="105" rx="12"/>
-    <circle class="n" cx="46" cy="342" r="22"/><text class="nt" x="46" y="348" text-anchor="middle">6</text>
-    <text class="t" x="86" y="336">Response is returned</text>
-    <text class="s" x="86" y="364">Clients get availability first, with integrity when quorum is met.</text>
+    <rect class="step" x="0" y="330" width="540" height="120" rx="12"/>
+    <circle class="n" cx="48" cy="390" r="22"/><text class="nt" x="48" y="396" text-anchor="middle">6</text>
+    <text class="t" x="88" y="383">Response returns to client</text>
+    <text class="s" x="88" y="410">Availability remains primary.</text>
+    <text class="s" x="88" y="432">Integrity proof is included when quorum holds.</text>
   </g>
 
-  <text class="footer" x="640" y="760" text-anchor="middle">RPC-NCN: decentralized reliability + quorum-backed integrity</text>
+  <text class="footer" x="640" y="805" text-anchor="middle">RPC-NCN combines decentralized reliability with quorum-backed integrity</text>
 </svg>
