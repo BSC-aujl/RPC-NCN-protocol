@@ -21,9 +21,11 @@ Standard RPC setups often force a tradeoff between uptime and trust. RPC-NCN is 
 
 1. A client sends a request through RPC-NCN.
 2. The gateway fans out execution to independent operators.
-3. Responses are compared using stake-weighted agreement.
-4. Only quorum-backed output is accepted.
-5. Integrity context is attached so the response can be trusted and audited.
+3. Decentralization provides strong response continuity via multiple independent paths.
+4. Responses are compared using stake-weighted agreement.
+5. When quorum is reached, integrity context is attached so the response is cryptographically trustworthy.
+
+Even when strict quorum is not reached for a specific attempt, the decentralized operator topology still provides strong assurance of getting a response.
 
 <div class="viz-grid viz-grid-single">
   <button class="viz-card" data-viz-src="./images/request-proof-flow.svg" data-viz-title="Request to proof flow">

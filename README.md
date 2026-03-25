@@ -17,9 +17,11 @@ RPC-NCN is built for organizations that need both high RPC reliability and verif
 
 1. Client sends request.
 2. Gateway fans out to independent operators.
-3. Responses are compared under stake-weighted agreement.
-4. Quorum-backed output is accepted.
-5. Response is returned with integrity context.
+3. Decentralized paths provide strong response continuity.
+4. Responses are compared under stake-weighted agreement.
+5. Quorum-backed output is returned with integrity context.
+
+Even if strict quorum is not reached for a specific attempt, decentralization still provides strong assurance of getting a response.
 
 ```mermaid
 flowchart LR
